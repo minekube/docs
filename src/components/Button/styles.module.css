@@ -1,0 +1,45 @@
+.buttonGroup {
+}
+
+.buttonGroupContent {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.375em;
+}
+
+.buttonGroupContent > a,
+.buttonGroupContent > button {
+    margin: 0.375em;
+}
+
+.buttonIsPrimary {
+    background: var(--ifm-color-primary-dark);
+}
+
+.buttonIsPrimary:hover {
+    background: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .buttonIsPrimary {
+    color: inherit;
+    background: transparent;
+    border-color: var(--ifm-color-primary-dark);
+}
+
+.buttonIsSecondary {
+    color: var(--ifm-color-content);
+    background: var(--ifm-background-color);
+}
+
+[data-theme="dark"] .buttonIsSecondary {
+    color: inherit;
+    background: transparent;
+}
+
+.buttonIsSecondary:hover {
+    background: var(--ifm-color-primary-light);
+}
+
+[data-theme="dark"] .buttonIsSecondary:hover {
+    border-color: var(--ifm-color-primary-light);
+}

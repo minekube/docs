@@ -1,0 +1,65 @@
+---
+title: INSTALLATION
+sidebar_position: 1.5
+---
+import {ButtonGroup, Button} from "@site/src/components/Button";
+
+# Installing Gate
+
+The installation of Gate is ultra easy! You only need to download the executable binary file,
+and you're ready to run the proxy! The configuration file `config.yml` is optional, see
+[Configuration](configuration) for more.
+
+## Method 1 - Download the pre-built binary
+
+You can download the latest pre-built binary for your operating system from the [release page](https://github.com/minekube/gate/releases).
+
+<ButtonGroup>
+    <Button type="primary" href="https://github.com/minekube/gate/releases" target="_blank">View Downloads</Button>
+</ButtonGroup>
+
+| OS      | Binary Name with Processor                        |
+|---------|---------------------------------------------------|
+| Windows | `windows_arm64`, `windows_amd64` or `windows_386` |
+| MacOS   | `darwin_amd64` or `darwin_arm64`                  |
+| Linux   | `linux_arm64`, `linux_amd64` or `linux_386`       |
+
+Make sure the binary file has execution permissions, if not already:
+```shell
+$ chmod +x gate
+```
+
+After you have downloaded the binary you can open your terminal
+where the binary resides (e.g. `Downloads` folder) and try to run it:
+```sh
+$ ./gate -h
+```
+
+Optionally you can move the Gate binary to somewhere like `/usr/local/bin`
+or add the binary path to your `PATH` environment variable.
+
+
+## Method 2 - Install using Go
+
+Since [`Gate`](https://github.com/minekube/gate/blob/master/go.mod) is a Go module you can easily install the latest release.
+To run the following command ensure you have [`Go`](https://go.dev/doc/install), and [`Git`](https://www.atlassian.com/git/tutorials/install-git) installed.
+
+```sh
+$ go install go.minekube.com/gate@latest
+```
+
+After this step you can run Gate easily from anywhere in your terminal:
+```sh
+$ gate -h
+```
+
+## Method 3 - Run Gate directly from the Internet
+
+Using Go you could even run Gate without the installation command.
+Internally Go downloads and caches the module, builds and caches it and finally runs it,
+all at once.
+```sh
+$ go run go.minekube.com/gate@latest
+```
+
+Thanks to local caching running this command a second time would start Gate even quicker.
