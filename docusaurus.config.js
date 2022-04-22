@@ -10,7 +10,7 @@ const config = {
   tagline: 'Build modern high-traffic Minecraft networks & games',
   url: 'https://developers.minekube.com',
   baseUrl: '/',
-  onBrokenLinks: 'warn', //'throw',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'favicon-32x32.png',
   organizationName: 'minekube', // Usually your GitHub org/user name.
@@ -72,7 +72,7 @@ const config = {
         },
         items: [
           {to: '/gate', label: 'Gate', position: 'left'},
-          // {to: '/connect', label: 'Connect', position: 'left'},
+          {to: '/connect', label: 'Connect', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'right'},
           {
             href: 'https://minekube.com/discord',
@@ -96,10 +96,10 @@ const config = {
                 label: 'Gate',
                 to: '/gate',
               },
-              // {
-              //   label: 'Connect',
-              //   to: '/connect',
-              // },
+              {
+                label: 'Connect',
+                to: '/connect',
+              },
             ],
           },
           {
