@@ -3,12 +3,16 @@ title: INSTALLATION
 sidebar_position: 1.5
 ---
 import {ButtonGroup, Button} from "@site/src/components/Button";
+import {LatestTag} from "@site/src/components/GitHub";
 
 # Installing Gate
 
 The installation of Gate is ultra easy! You only need to download the executable binary file,
 and you're ready to run the proxy! The configuration file `config.yml` is optional, see
 [Configuration](configuration) for more.
+
+**Latest release tag on GitHub:**
+<code><LatestTag username="minekube" repo="gate"/></code>
 
 ## Method 1 - Download the pre-built binary
 
@@ -18,26 +22,79 @@ You can download the latest pre-built binary for your operating system from the 
     <Button type="primary" href="https://github.com/minekube/gate/releases" target="_blank">View Downloads</Button>
 </ButtonGroup>
 
+
+<details>
+<summary>Available downloads by operating systems</summary>
+
 | OS      | Binary Name with Processor                        |
 |---------|---------------------------------------------------|
 | Windows | `windows_arm64`, `windows_amd64` or `windows_386` |
 | MacOS   | `darwin_amd64` or `darwin_arm64`                  |
 | Linux   | `linux_arm64`, `linux_amd64` or `linux_386`       |
 
-Make sure the binary file has execution permissions, if not already:
-```shell
-$ chmod +x gate
-```
+</details>
 
-After you have downloaded the binary you can open your terminal
-where the binary resides (e.g. `Downloads` folder) and try to run it:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="linux" label="Linux" default>
+
+<code>
+DOWNLOAD='https://github.com/minekube/gate/releases/download/
+<LatestTag username="minekube" repo="gate"/>/gate_
+<LatestTag plain username="minekube" repo="gate"/>_linux_amd64'<br/>
+curl -Lo ./gate $DOWNLOAD<br/>
+chmod +x ./gate<br/>
+mv ./gate ~/.local/bin/gate<br/>
+</code>
+
+</TabItem>
+<TabItem value="macos" label="MacOS">
+
+<code>
+DOWNLOAD='https://github.com/minekube/gate/releases/download/
+<LatestTag username="minekube" repo="gate"/>/gate_
+<LatestTag plain username="minekube" repo="gate"/>_darwin_amd64'<br/>
+curl -Lo ./gate $DOWNLOAD<br/>
+chmod +x ./gate<br/>
+mv ./gate ~/.local/bin/gate<br/>
+</code>
+
+</TabItem>
+<TabItem value="windows" label="Windows in PowerShell">
+
+<code>
+curl.exe -Lo gate.exe https://github.com/minekube/gate/releases/download/
+<LatestTag username="minekube" repo="gate"/>/gate_
+<LatestTag plain username="minekube" repo="gate"/>_windows_amd64<br/>
+Move-Item .\gate.exe c:\some-dir-in-your-PATH\gate.exe
+</code>
+
+</TabItem>
+</Tabs>
+
+
+<details>
+<summary>
+    Note: If you do not have root access on the target system, you can still install gate to the ~/.local/bin directory:
+</summary>
+
 ```sh
-$ ./gate -h
+chmod +x gate
+mkdir -p ~/.local/bin
+mv ./gate ~/.local/bin/gate
+# and then append (or prepend) ~/.local/bin to $PATH
 ```
 
-Optionally you can move the Gate binary to somewhere like `/usr/local/bin`
-or add the binary path to your `PATH` environment variable.
+</details>
 
+
+You can now open your terminal show Gate help by running:
+```sh
+$ gate -h
+```
 
 ## Method 2 - Install using Go
 

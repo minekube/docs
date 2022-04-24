@@ -17,7 +17,7 @@ const config = {
   projectName: 'minekube-docs',
   customFields: {
     homeDescription: 'Minekube provides open source software and services ' +
-        'to developers to simplify building high-traffic Minecraft networks globally.'
+        'to developers to simplify building high-traffic Minecraft networks globally.',
   },
 
   presets: [
